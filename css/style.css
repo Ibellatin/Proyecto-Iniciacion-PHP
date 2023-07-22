@@ -8,7 +8,14 @@
 
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 body{
     font-size: 16px; /*1rem=10px*/
     font-family: 'Krub', sans-serif;
@@ -24,7 +31,7 @@ body{
     font-size: 2rem;
 }
 .contenedor{
-    width: 120rem;
+   max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -34,9 +41,13 @@ body{
 }
 .navegacion-principal{
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
 }
-   
+   @media (min-width:768px  ) {
+    .navegacion-principal{
+      flex-direction: row;  
+      justify-content: space-between;
+   }
 .navegacion-principal a{
   color: var(--blanco);
   text-decoration:none;
@@ -47,8 +58,19 @@ body{
     background-color: var(--primario);
     color:var(--oscuro);
 }
-@media (min-width: 768px){
-    body {
-        background-color:blue;
-    }
+.hero{
+    background-image:url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    padding: 20px;
+    position: relative;
+}
+.contenido-hero{
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.6);
+    bottom: 0px;
+    left: 0px;
+    top:0px;
+    right: 0px;
 }
